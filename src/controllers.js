@@ -37,9 +37,23 @@ function readGame(req,res){
     }
 }
 
+function updateGameBoard(req,res){
+    console.log(req.params.gameRoute,req.body)
+    const update = db.updateBoard(req.params.gameRoute,req.body.gameState)
+    console.log(update)
+    if (update) {
+        res.status(200)
+        res.json({gameState: update})
+    }
+    else {
+        res.status(400)
+        res.json({error: "no game state returned"})
+    }
+}
 
-function updateGame(req,res){
-    const update = db.update(req.params.gameRoute,req.body.pieceData,req.body.square)
+
+function updateGameSquare(req,res){
+    const update = db.updateSquare(req.params.gameRoute,req.body.pieceData,req.body.square)
     if (update) {
         res.status(200)
         res.json({gameState: update})
@@ -69,6 +83,7 @@ module.exports = {
     getAllGames,
     createGame,
     readGame,
-    updateGame,
+    updateGameSquare,
+    updateGameBoard,
     deleteGame
 }

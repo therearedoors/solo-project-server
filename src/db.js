@@ -6,7 +6,11 @@ const interface = {
 getAll: () => Object.keys(state),
 create: route => {state[route] = board()},
 read: route => state[route],
-update: (route,pieceData,square) => {
+updateBoard: (route,gameState) => {
+    state[route] = gameState
+    return state[route]
+},
+updateSquare: (route,pieceData,square) => {
     state[route][square] = pieceData
     return state[route]},
 delete: route => {delete state[route]}
