@@ -8,7 +8,7 @@
 [Draughts REST API.docx](https://github.com/therearedoors/solo-project-server/files/8780284/Draughts.REST.API.docx)
 
 ### Reality:
-# 5 route REST API:
+# 6 route REST API:
 
 GET all game routes
 
@@ -16,10 +16,12 @@ GET game by game route
 
 POST new game by (novel) game route
 
+PUT whole board state by game route
+
 PATCH game by game route + JSON request body with 'pieceData' and 'square' keys (a number and a two char string)
 
 DELETE game by game route
 
-# The "database":
+# The database:
 
-A Javascript object, interface consists of five functions corresponding to the API routes.
+A Javascript object, interface consists of six functions corresponding to the API routes.
