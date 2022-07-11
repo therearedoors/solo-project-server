@@ -22,6 +22,10 @@
     "url": "https://github.com/therearedoors/solo-project-server/issues"
   },
   "homepage": "https://github.com/therearedoors/solo-project-server#readme",
+  "engines": {
+    "npm": "8.x",
+    "node": "16.x"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1",

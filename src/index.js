@@ -13,7 +13,10 @@ const gameRouter = require("./router")
 
 app.use("/game", gameRouter)
 
-const port = 3030
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 3030;
+}
 app.listen(port, () => {
  console.log(`Server is running on http://localhost:${port}/`)
 })
