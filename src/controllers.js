@@ -7,7 +7,7 @@ function getAllGames (req, res) {
         res.json({games: games})
     }
     else {
-        res.status(204)
+        res.status(200)
         res.json({games: games})
     }
 }
